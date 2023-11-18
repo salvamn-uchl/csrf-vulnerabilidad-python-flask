@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+  <nav>
+    <div class="icono-nav">
+      <img src="{{ url_for('static', filename='img/kali-linux-480.png') }}" alt="">
+    </div>
+    <div class="opciones-nav">
+      {% if 'usuario' in session %}
+      <div>
+        <span>Bienvenido {{ session['usuario'] }}</span>
+      </div>
+      <div>
+        <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+      </div>
+      {% else %}
+      <div>
+        <a href="{{ url_for('index') }}">Inicio</a>
+      </div>
+      <div>
+        <a href="{{ url_for('login') }}">Login</a>
+      </div>
+      {% endif %}
+    </div>
+  </nav>
+
+
+
+  <ul class="lista-opciones">
+    {% if 'usuario' in session %}
+    <li>
+      <a href="http://localhost:5500/pagina_maliciosa.html">Realiza esta encuesta y te damos 100 dólares</a>
+    </li>
+    <li>
+      <a href="{{ url_for('template_cambiar_contrasenia') }}">Cambiar Contraseña</a>
+    </li>
+    {% endif %}
+  </ul>
+
+
+  <div class="titulo">
+    <h2 >Lista de usuarios</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Contraseña</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for usuario in lista_usuarios %}
+        <tr>
+          <td>{{ usuario[0] }}</td>
+          <td>{{ usuario[1] }}</td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

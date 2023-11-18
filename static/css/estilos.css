@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 7vh;
+    background-color: #333;
+}
+
+nav .icono-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+}
+
+nav .icono-nav img{
+    height: 65%;
+}
+
+nav .opciones-nav{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 80%;
+    height: 100%;
+}
+
+nav .opciones-nav div{
+    margin-right: 10px;
+}
+
+nav .opciones-nav div span{
+    color: white;
+}
+
+nav .opciones-nav div a{ 
+    color: #60b8e4;
+    text-decoration: none;
+    
+}
+
+
+.lista-opciones{
+    width: auto;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+}
+
+.lista-opciones li{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 7px;
+    margin-left: 10px;
+}
+
+.lista-opciones li a{
+    color: #333;
+}
+
+
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    padding: 20px;
+}
+
+.titulo h1,
+.titulo h2,
+.titulo h3{
+    margin-left: 20px;
+}
+
+table{
+    margin: 10px;
+    width: 100px;
+}
+
+table th{
+    border: solid #33333350 1px;
+    padding: 7px;
+    background-color: #333;
+    color: white;
+}
+
+table td{
+    border: solid #33333350 1px;
+    padding: 7px;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+form div input{
+    width: 90%;
+    padding: 7px;
+    border-radius: 7px;
+    border: solid #3333334f 1px;
+}
+
+form .btn{
+    display: flex;
+    justify-content: center;
+}
+
+form .btn input[type=submit]{
+    width: 50%;
+    padding: 7px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+}

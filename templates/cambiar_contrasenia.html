@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cambiar contraseña</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+	<nav>
+		<div class="icono-nav">
+			<img src="{{ url_for('static', filename='img/kali-linux-480.png') }}" alt="">
+		</div>
+		<div class="opciones-nav">
+			{% if 'usuario' in session %}
+			<div>
+				<span>Bienvenido {{ session['usuario'] }}</span>
+			</div>
+			<div>
+        <a href="{{ url_for('index') }}">Inicio</a>
+      </div>
+			<div>
+				<a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+			</div>
+			{% else %}
+			<div>
+				<a href="{{ url_for('index') }}">Inicio</a>
+			</div>
+			<div>
+				<a href="{{ url_for('login') }}">Login</a>
+			</div>
+			{% endif %}
+		</div>
+	</nav>
+	<form action="{{ url_for('cambiar_contrasenia') }}" method="post">
+		<div>
+			<h1>Cambiar Contraseña</h1>
+		</div>
+
+		<div>
+			<label for="">Contraseña</label>
+			<input type="password" name="nueva_contrasenia" id="">
+		</div>
+
+		<div class="btn">
+			<input type="submit" value="cambiar contraseña">
+		</div>
+	</form>
+
+</body>
+
+</html>

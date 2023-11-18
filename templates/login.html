@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Vulnerable</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+  <nav>
+    <div class="icono-nav">
+      <img src="{{ url_for('static', filename='img/kali-linux-480.png') }}" alt="">
+    </div>
+    <div class="opciones-nav">
+      {% if 'usuario' in session %}
+      <div>
+        <span>Bienvenido {{ session['usuario'] }}</span>
+      </div>
+      <div>
+        <a href="{{ url_for('index') }}">Inicio</a>
+      </div>
+      <div>
+        <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+      </div>
+      {% else %}
+      <div>
+        <a href="{{ url_for('index') }}">Inicio</a>
+      </div>
+      <div>
+        <a href="{{ url_for('login') }}">Login</a>
+      </div>
+      {% endif %}
+    </div>
+  </nav>
+
+
+
+  <form action="" method="post">
+
+    <div>
+      <h1>Login</h1>
+    </div>
+
+    <div>
+      <label for="">Nombre</label>
+      <input name="usuario" type="text">
+    </div>
+
+    <div>
+      <label for="">Contraseña</label>
+      <input type="password" name="contrasenia" id="">
+    </div>
+
+    <div class="btn">
+      <input type="submit" value="iniciar sesion">
+    </div>
+  </form>
+
+</body>
+
+</html>
